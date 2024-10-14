@@ -12,7 +12,7 @@ rebuild:
 	make build-sys
 
 enter-container:
-	docker run -ti -p 5900:5900 -p 8080:6000 -v "`pwd`:/repo" --privileged --rm lkp-$(T):latest /bin/bash 
+	docker run -ti -p 5900:5900 -p 8080:6000 -v "`pwd`:/repo" --privileged --rm lkp-$(T):ruiz /bin/bash 
 
 stop-container:
 	ps aux | grep -E 'bzImage' | grep -v grep | awk '{print $$2}' | xargs kill -9
