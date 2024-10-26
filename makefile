@@ -12,7 +12,7 @@ rebuild:
 	make build-sys
 
 enter-container:
-	docker run -ti -p 5900:5900 -p 8080:6000 -v "`pwd`:/repo" --privileged --rm lkp-$(T):ruiz /bin/bash 
+	docker run -ti -p 5900:5900 -p 8080:6000 -v "`pwd`:/repo" --privileged --rm lkp-$(T):latest /bin/bash 
 
 attach-container:
 	docker exec -it $$(docker ps --filter ancestor=lkp-$(T) --format '{{.ID}}') /bin/bash
